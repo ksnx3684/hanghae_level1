@@ -126,7 +126,7 @@ router.delete('/posts/:_postId', async(req, res) => {
         });
     }
 
-    const posts = await Posts.findOne({_id:new ObjectId(underId)});
+    const posts = await Posts.findOne({_id: new ObjectId(underId)});
 
     if(posts === null){
         return res.status(404).json({
@@ -138,6 +138,7 @@ router.delete('/posts/:_postId', async(req, res) => {
 
         if(post.password === password){
             await Posts.deleteOne({_id: new ObjectId(underId)});
+            await Comments.deleteMany({_postId: new ObjectId(underId)});
             return res.status(200).json({
                 message: "게시글을 삭제하였습니다."
             })

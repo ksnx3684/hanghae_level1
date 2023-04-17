@@ -72,14 +72,14 @@ router.get('/posts/:_postId', async (req, res) => {
                 createdAt : data.createdAt
             };
         });
+
+        res.status(200).json({ data: results });
     } catch(err){
         return res.status(400).json({
             message: "데이터 형식이 올바르지 않습니다."
         });
     }
     
-    res.status(200).json({ data: results });
-
 });
 
 

@@ -1,0 +1,16 @@
+{
+  "name": "test_lv1",
+  "version": "1.0.0",
+  "description": "test_level1",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "ksnx3684",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2",
+    "mongoose": "^7.0.3"
+  },
+  "type": "commonjs"
+}
